@@ -1,0 +1,104 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.7
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+#copiar boton mouse
+"xdotool keyup b:8 && xdotool key ctrl+c"
+b:8
+
+#pegar boton mouse
+"xdotool keyup b:9 && xdotool key ctrl+v"
+b:9
+
+#enter boton mouse
+"xdotool keyup b:2 && xdotool key Return"
+b:2
+
+#mover hacia la derecha boton mouse
+"xdotool keyup b:7 && xdotool key Mod2 + Right &"
+b:7
+
+#mover hacia la izquierda boton mouse
+"xdotool keyup b:6 && xdotool key Mod2 + Left &"
+b:6
+
+#traductor ingles-spanish
+"xdotool keyup Shift+Mod4 + t && /media/Datos/Scripts/traductor &"
+Shift+Mod4 + t
+
+#subir volumen
+"xdotool keyup XF86AudioRaiseVolume && amixer set Master 2%+ &"
+XF86AudioRaiseVolume
+
+#bajar volumen
+"xdotool keyup XF86AudioLowerVolume && amixer set Master 2%- &"
+XF86AudioLowerVolume
+
+#mutear volumen
+"xdotool keyup XF86AudioMute && amixer set Master toggle &"
+XF86AudioMute
+
+#tomar screen area seleccionada
+"xdotool keyup Shift+Mod4 + s && flameshot gui &"
+Shift+Mod4 + s
+
+#whatsapp
+"xdotool keyup Shift+Mod4 + w && firefox web.whatsapp.com &"
+Shift+Mod4 + w
+
+#subir brillo
+"brightnessctl s 10%+ &"
+XF86MonBrightnessUp
+
+#bajar brillo
+"brightnessctl s 10%- &"
+XF86MonBrightnessDown
+
+#subir brillo teclado
+"brightnessctl -d smc::kbd_backlight s 30%+ &"
+XF86KbdBrightnessUp
+
+#bajar brillo teclado
+"brightnessctl -d smc::kbd_backlight s 30%- &"
+XF86KbdBrightnessDown
+
+
+
+##################################
+# End of xbindkeys configuration #
+##################################
